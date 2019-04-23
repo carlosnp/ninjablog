@@ -8,11 +8,9 @@ def homepage(request):
 	context = {
 	}
 	return render(request, template_name, context)
-	# return HttpResponse(" <br> <p>Home PAGE</p>")
 
 def about(request):
 	template_name = 'about.html'
 	context = {
 	}
 	return render(request, template_name, context)
-	# return HttpResponse(" <br> <p>ABOUT</p>")
