@@ -1,0 +1,14 @@
+.navbar-ninja {
+	margin: 0 50px;
+    display: unset;
+}
+.nav-ninja{
+	color: blue;
+	background-color: #e4dbdb;
+    padding: 5px 10px;
+	font-size: 20px;
+	margin: 5px 20px;
+	border-radius: 10px 10px 2px 2px;
+	font-weight: bold;
+	text-decoration: dashed;
+}

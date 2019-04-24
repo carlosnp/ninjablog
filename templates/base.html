@@ -4,9 +4,12 @@
 <head>
 	<title>{% block title %}Ninja-Blog{% endblock title %}</title>
 	<!-- Estilos Extra -->
+	<!-- Estilos propios -->
+	<link rel="stylesheet" href="{% static 'css/estilos.css' %}">
 	{% block head_extra %}{% endblock head_extra %}
 </head>
 <body>
+	{% include 'navbar.html' %}	
 	{% block content %}
 	{% endblock %}
 </body>

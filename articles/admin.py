@@ -1,3 +1,7 @@
+# Django
 from django.contrib import admin
 
-# Register your models here.
+# Project
+from .models import Article
+
+admin.site.register(Article)
