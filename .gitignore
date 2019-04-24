@@ -6,8 +6,15 @@ db.sqlite3
 *.sqlite3
 *.sqlite
 *.sql
+*.png
+*.jpg
+*.jpeg
 __pycache__
 articles/__pycache__
 articles/migrations
 articles/migrations/__pycache__
 articles/templatetags/__pycache__
+media/*.png
+media/*.jpg
+media/*.jpeg
+media/*
