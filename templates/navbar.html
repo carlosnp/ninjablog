@@ -3,5 +3,9 @@
 	<a class="nav-ninja ribbon" href="{% url 'about'%}">About</a>
 	<a class="nav-ninja ribbon" href="{% url 'articles:list'%}">Articles</a>
 	<a class="nav-ninja ribbon" href="{% url 'admin:index' %}">admin login</a>
+	{% if not request.user.is_authenticated %}
 	<a class="nav-ninja ribbon" href="{% url 'accounts:signup' %}">Registrate</a>
+	{% else %}
+	<a class="nav-ninja ribbon" style="background-color: black;color: white; border-left: 15px solid transparent;"> {{ request.user|upper }} </a>
+	{% endif %}
 </nav>

@@ -5,13 +5,15 @@
 {% block content %}
 	<div>
 		<h1>Registrate</h1>
-<!-- 		<div class="accounts">
-			<form action="" method="POST" enctype="multipart/form-data">
+		<div class="accounts">
+			<form action="" 
+			method="POST" 
+			enctype="multipart/form-data">
 				{% csrf_token %}
 				{{ form.as_p }}
 				<button type="submit">Registrar usuario</button>
 			</form>
-		</div> -->
+		</div>
 		<a href="{% url 'home'%}">Regresar a la lista de Artículos</a>
 	</div>
 {% endblock content %}
