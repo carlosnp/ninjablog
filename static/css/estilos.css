@@ -12,3 +12,11 @@
 	font-weight: bold;
 	text-decoration: dashed;
 }
+
+.ribbon {
+    width: 0px;
+    height: 120px;
+    border-left: 40px solid #4fb3d9;
+    border-right: 40px solid #4fb3d9;
+    /*border-bottom: 15px solid transparent;*/
+}
