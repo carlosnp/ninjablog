@@ -57,7 +57,7 @@ def article_update(request, id=None):
     	instance = Article.objects.get(id=id)
     except:
     	template_names 	= "404.html"
-    	detail_comment = "El Artículo que buscas no existe"
+    	detail_comment = "El Artículo que deseas editar no existe"
     	contextdata = {
     		"detail_comment": detail_comment,
     	}
@@ -83,7 +83,7 @@ def article_delete(request, id=None):
 		instance = Article.objects.get(id=id)
 	except:
 		template_names 	= "404.html"
-		detail_comment = "El Artículo que buscas no existe"
+		detail_comment = "El Artículo que deseas eliminar no existe"
 		contextdata = {
 			"detail_comment": detail_comment,
 		}

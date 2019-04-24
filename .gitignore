@@ -11,9 +11,12 @@ db.sqlite3
 *.jpeg
 __pycache__
 articles/__pycache__
-articles/migrations
+articles/migrations/*
 articles/migrations/__pycache__
 articles/templatetags/__pycache__
+accounts/__pycache__
+accounts/migrations/*
+accounts/migrations/__pycache__
 media/*.png
 media/*.jpg
 media/*.jpeg
