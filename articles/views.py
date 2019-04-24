@@ -1,5 +1,6 @@
 # Django
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 # Project
 from .models import Article
 from .forms import ArticleForm
@@ -14,6 +15,7 @@ def article_list(request):
 	return render(request, template_name, context)
 
 # Crear Articulo
+@login_required(login_url='accounts:login')
 def article_create(request):
 	template_name = 'article_create.html'
 	
@@ -50,6 +52,7 @@ def article_detail(request, id):
 	return render(request, template_name, context)
 
 # Actualizar un Articulo
+@login_required(login_url='accounts:login')
 def article_update(request, id=None):
     template_name = 'article_create.html'
     
@@ -78,6 +81,7 @@ def article_update(request, id=None):
     return render(request, template_name, context)
 
 # Eliminar Articulo
+@login_required(login_url='accounts:login')
 def article_delete(request, id=None):
 	try:
 		instance = Article.objects.get(id=id)
