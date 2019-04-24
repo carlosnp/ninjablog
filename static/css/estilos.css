@@ -1,3 +1,10 @@
+a{
+	color: #0e4e6f;
+	text-decoration: blink;
+}
+a:hover{
+	color: green;
+}
 .navbar-ninja {
 	margin: 0 50px;
     display: unset;

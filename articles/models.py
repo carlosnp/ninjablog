@@ -1,4 +1,6 @@
+# Django
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Article(models.Model):
@@ -15,3 +17,11 @@ class Article(models.Model):
 	
 	def __str__(self):
 		return str(self.title)
+
+	# Recortador de texto
+	def snippet(self):
+		return self.body[:100]+'...'
+
+	# URL del Articulo
+	def get_absolute_url(self):
+		return reverse("articles:detail", kwargs={"id":self.id})
