@@ -5,6 +5,10 @@ a{
 a:hover{
 	color: green;
 }
+.enano a {
+	color: red;
+	font-size: 14px;
+}
 .navbar-ninja {
 	margin: 0 50px;
     display: unset;

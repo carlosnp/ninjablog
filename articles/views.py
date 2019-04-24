@@ -76,3 +76,18 @@ def article_update(request, id=None):
     	"form": form
     }
     return render(request, template_name, context)
+
+# Eliminar Articulo
+def article_delete(request, id=None):
+	try:
+		instance = Article.objects.get(id=id)
+	except:
+		template_names 	= "404.html"
+		detail_comment = "El Artículo que buscas no existe"
+		contextdata = {
+			"detail_comment": detail_comment,
+		}
+		return render(request, template_names, contextdata, status = 404)
+	# Elimina el articulo
+	instance.delete()
+	return redirect("articles:list")

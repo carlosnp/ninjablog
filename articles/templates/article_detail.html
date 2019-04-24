@@ -8,6 +8,7 @@
 		<div class="articles">
 			<h2> 
 				<a href="{% url 'articles:update' id=article.id %}"> {{ article.title }} </a> 
+				<small class="enano"> <a href="{% url 'articles:delete' id=article.id %}"> Eliminar </a>  </small>
 			</h2>
 			<p> {{ article.body }} </p>
 			<p>Fecha de creación: {{ article.date }}</p>
