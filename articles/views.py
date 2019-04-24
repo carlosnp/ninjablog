@@ -19,7 +19,7 @@ def article_list(request):
 def article_create(request):
 	template_name = 'article_create.html'
 	
-	form = ArticleForm(request.POST or None)
+	form = ArticleForm(request.POST or None, request.FILES or None)
 	
 	if form.is_valid():
 		instance = form.save(commit = False)
@@ -66,7 +66,7 @@ def article_update(request, id=None):
     	}
     	return render(request, template_names, contextdata, status = 404)
     # Formulario
-    form = ArticleForm(request.POST or None, instance=instance)
+    form = ArticleForm(request.POST or None, request.FILES or None, instance=instance)
     # Verificamos que el formulario es valido
     if form.is_valid():
     	instance = form.save(commit = False)
