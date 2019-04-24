@@ -13,6 +13,25 @@ def article_list(request):
 	}
 	return render(request, template_name, context)
 
+# Crear Articulo
+def article_create(request):
+	template_name = 'article_create.html'
+	
+	form = ArticleForm(request.POST or None)
+	
+	if form.is_valid():
+		instance = form.save(commit = False)
+		instance.save()
+		try:
+			return HttpResponseRedirect(instance.get_absolute_url())
+		except:
+			return redirect("articles:list")
+	context = {
+		"title": "Crear Artículo",
+		"form": form
+	}
+	return render(request, template_name, context)
+
 # Detalles de un Articulo
 def article_detail(request, id):
 	template_name = 'article_detail.html'
@@ -52,7 +71,7 @@ def article_update(request, id=None):
     	return redirect("articles:detail", id=id)
     # Contexto
     context = {
-    	"title":'Actualizar',
+    	"title":'Actualizar Artículo',
     	"articles": instance,
     	"form": form
     }
