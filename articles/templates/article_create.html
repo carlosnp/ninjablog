@@ -6,12 +6,12 @@
 	<div>
 		<h1>Detalles del Artículo</h1>
 		<div class="articles">
-			<h2> 
-				<a href="{% url 'articles:update' id=article.id %}"> {{ article.title }} </a> 
-			</h2>
-			<p> {{ article.body }} </p>
-			<p>Fecha de creación: {{ article.date }}</p>
-			<p>Fecha de creación: {{ article.updated }}</p>
+			<h2> {{ title }} </h2>
+			<form action="" method="POST" enctype="multipart/form-data">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<button type="submit">Guardar</button>
+			</form>
 		</div>
 		<a href="{% url 'articles:list'%}">Regresar a la lista de Artículos</a>
 	</div>
