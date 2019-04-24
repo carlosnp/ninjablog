@@ -7,6 +7,7 @@
 	<a class="nav-ninja ribbon" href="{% url 'accounts:signup' %}">Registrate</a>
 	<a class="nav-ninja ribbon" href="{% url 'accounts:login' %}">Iniciar Sesión</a>
 	{% else %}
+	<a class="nav-ninja ribbon" href="{% url 'accounts:logout' %}">Cerrar Sesión</a>
 	<a class="nav-ninja ribbon" style="background-color: black;color: white; border-left: 15px solid transparent;"> {{ request.user|upper }} </a>
 	{% endif %}
 </nav>

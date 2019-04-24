@@ -1,7 +1,7 @@
 # Django
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 
 # Registro de usuario
 def signupView(request):
@@ -21,6 +21,7 @@ def signupView(request):
 	}
 	return render(request, template_name, context)
 
+# Inicio de Sesion
 def loginView(request):
 	template_name = 'login.html'
 	if request.method == 'POST':
@@ -35,3 +36,8 @@ def loginView(request):
 		"form": form,
 	}
 	return render(request, template_name, context)
+
+# Cerrar Sesion
+def logoutView(request):
+	logout(request)
+	return redirect("home")
