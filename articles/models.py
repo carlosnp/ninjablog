@@ -10,6 +10,9 @@ class Article(models.Model):
 	date 	= models.DateTimeField("Fecha de creación", auto_now=False, auto_now_add=True)
 	updated = models.DateTimeField("Fecha de Actualización",auto_now=True, auto_now_add=False)
 	# thumbnail
+	Image 	= models.ImageField("Imagen",
+			         blank=True,
+			         default='cripto.png')
 	# Author
 	class Meta:
 		verbose_name = 'Artículo'
