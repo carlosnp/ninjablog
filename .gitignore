@@ -2,6 +2,7 @@ db.sqlite3
 */__pycache__
 */migrations
 */migrations/__pycache__
+*/templatetags/__pycache__
 *.sqlite3
 *.sqlite
 *.sql
@@ -9,3 +10,4 @@ __pycache__
 articles/__pycache__
 articles/migrations
 articles/migrations/__pycache__
+articles/templatetags/__pycache__
