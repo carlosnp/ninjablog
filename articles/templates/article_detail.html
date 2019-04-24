@@ -12,7 +12,7 @@
 			</h2>
 			<p> {{ article.body }} </p>
 			<p>Fecha de creación: {{ article.date }}</p>
-			<p>Fecha de creación: {{ article.updated }}</p>
+			<p>Fecha de actualización: {{ article.updated }}</p>
 			<img src="{{ article.Image.url }}">
 		</div>
 		<a href="{% url 'articles:list'%}">Regresar a la lista de Artículos</a>
