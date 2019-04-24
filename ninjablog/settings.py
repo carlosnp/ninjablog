@@ -106,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Caracas'
 
 USE_I18N = True
 
@@ -119,6 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 # Se Configura la ruta para encontrar los estaticos
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static/'),
