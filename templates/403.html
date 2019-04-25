@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %} 403 {% endblock %}
+
+
+{% block content %}
+	<div style="margin: 10px auto; padding: 20px; width: 50%;">
+    	<h1 style="font-size: 8vw;">Error 403</h1>
+    	{% if detail_comment %}
+    		<p style="font-size: 2vw; color: red;"> {{ detail_comment }} </p>
+    		<p style="font-size: 2vw; color: grey;"> 
+    			<b style="color: blue;"> {{ userlogin|capfirst }} </b> 
+    		</p>
+            <!-- Permisos de edicion -->
+    		{% if editall %}
+    		<p style="font-size: 2vw; color: grey;"> 
+    			No creaste 
+    			<b style="color: blue;"> "{{ content_text }}" </b>
+    		</p>
+    		<p style="font-size: 2vw; color: grey;">
+    			No lo puedes Editar 
+    		</p>
+    		{% endif %}
+            <!-- Permisos para eliminar -->
+    		{% if deleteall %}	
+	    		<p style="font-size: 2vw; color: grey;">
+	    			No creaste
+	    			<b style="color: blue;"> 
+	    				<small> "{{ content_text }}" </small>
+	    			</b>
+	    		</p>
+	    		<p style="font-size: 2vw; color: grey;">
+    				No lo puedes Eliminar 
+    			</p>
+    		{% endif %}
+            <!-- Permisos de vista -->
+            {% if seeall %}  
+                <p style="font-size: 2vw; color: grey;">
+                    No creaste
+                    <b style="color: blue;"> 
+                        <small> "{{ content_text }}" </small>
+                    </b>
+                </p>
+                <p style="font-size: 2vw; color: grey;">
+                    No Tienes permiso para ver este Articulo. 
+                </p>
+            {% endif %}
+    	{% else %}
+    		<p style="font-size: 2vw;">No Tienes los permisos necesarios!!!</p>
+    	{% endif %}
+        <a href="{% url 'home' %}">Volver al inicio</a>
+	</div>
+{% endblock content %}

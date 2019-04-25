@@ -1,6 +1,7 @@
 # Django
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Article(models.Model):
@@ -14,6 +15,8 @@ class Article(models.Model):
 			         blank=True,
 			         default='cripto.png')
 	# Author
+	author 	= models.ForeignKey(User, default = None, on_delete=models.CASCADE, verbose_name="Autor")
+
 	class Meta:
 		verbose_name = 'Artículo'
 		verbose_name_plural = 'Artículos'

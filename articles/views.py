@@ -23,6 +23,7 @@ def article_create(request):
 	
 	if form.is_valid():
 		instance = form.save(commit = False)
+		instance.author = request.user
 		instance.save()
 		try:
 			return HttpResponseRedirect(instance.get_absolute_url())
@@ -65,6 +66,18 @@ def article_update(request, id=None):
     		"detail_comment": detail_comment,
     	}
     	return render(request, template_names, contextdata, status = 404)
+    # Verificamos que el usuario sea el autor del articulo
+    if instance.author != request.user:
+    	template_name 	= "403.html"
+    	detail_comment = "Opsss!!!"
+    	content_text = instance.title
+    	contextdata = {
+    		"detail_comment": detail_comment,
+			"content_text": content_text,
+			"userlogin": request.user,
+			"editall": True,
+		}
+    	return render(request, template_name, contextdata, status = 403)
     # Formulario
     form = ArticleForm(request.POST or None, request.FILES or None, instance=instance)
     # Verificamos que el formulario es valido
@@ -92,6 +105,18 @@ def article_delete(request, id=None):
 			"detail_comment": detail_comment,
 		}
 		return render(request, template_names, contextdata, status = 404)
+	# Verificamos que el autor sea el usuario
+	if instance.author != request.user:
+		template_name 	= "403.html"
+		detail_comment = "Opsss!!!"
+		content_text = instance.title
+		contextdata = {
+			"detail_comment": detail_comment,
+			"userlogin": request.user,
+			"content_text": content_text,
+			"deleteall": True,
+		}
+		return render(request, template_name, contextdata, status = 403)
 	# Elimina el articulo
 	instance.delete()
 	return redirect("articles:list")

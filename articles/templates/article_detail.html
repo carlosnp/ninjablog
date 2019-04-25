@@ -6,13 +6,18 @@
 	<div>
 		<h1>Detalles del Artículo</h1>
 		<div class="articles">
+			{% if request.user == article.author %}
 			<h2> 
 				<a href="{% url 'articles:update' id=article.id %}"> {{ article.title }} </a> 
 				<small class="enano"> <a href="{% url 'articles:delete' id=article.id %}"> Eliminar </a>  </small>
 			</h2>
+			{% else %}
+			<h2> {{ article.title }} </h2>
+			{% endif %}
 			<p> {{ article.body }} </p>
-			<p>Fecha de creación: {{ article.date }}</p>
-			<p>Fecha de actualización: {{ article.updated }}</p>
+			<p style="color: grey;">Fecha de creación: {{ article.date }}</p>
+			<p style="color: #3a8688;">Fecha de actualización: {{ article.updated }}</p>
+			<p>Autor: {{ article.author.username }}</p>
 			<img src="{{ article.Image.url }}">
 		</div>
 		<a href="{% url 'articles:list'%}">Regresar a la lista de Artículos</a>

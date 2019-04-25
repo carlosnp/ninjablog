@@ -4,14 +4,19 @@
 
 {% block content %}
 	<div>
+		{% if request.user.is_authenticated %}
 		<h1> <a href="{% url 'articles:create'%}">Lista de Artículos</a> </h1>
+		{% else %}
+		<h1> Lista de Artículos </h1>
+		{% endif %}
 		<div class="articles">
 			{% for article in articles %}
 			<h2> 
 				<a href="{{ article.get_absolute_url }}"> {{ article.title }} </a> 
 			</h2>
-			<p> {{ article.snippet }} </p>
-			<p>Fecha de creación: {{ article.date }}</p>
+			<p style="color: grey;"> {{ article.snippet }} </p>
+			<p style="color: grey;">Fecha de creación: {{ article.date }}</p>
+			<p>Autor: {{ article.author.username }}</p>
 			{% endfor %}
 		</div>
 	</div>
