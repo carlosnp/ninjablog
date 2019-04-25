@@ -8,10 +8,11 @@
 		<div class="accounts">
 			<form action="" 
 			method="POST" 
-			enctype="multipart/form-data">
+			enctype="multipart/form-data"
+			class="site-form">
 				{% csrf_token %}
 				{{ form.as_p }}
-				<button type="submit">Registrar usuario</button>
+				<button class="site-buttom" type="submit">Registrar usuario</button>
 			</form>
 		</div>
 		<a href="{% url 'home'%}">Regresar a la lista de Artículos</a>

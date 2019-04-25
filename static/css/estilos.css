@@ -43,7 +43,7 @@ a:hover{
 }
 div.wrapper h1{
 	text-align: center;
-	margin:100px auto;
+	margin:50px auto;
 	font-size: 2.4em;
 }
 header{
@@ -83,11 +83,15 @@ nav button{
 	position: relative;
 	padding-bottom: 40px;
 }
+.articles h2 {
+	text-align: center;
+	margin:20px auto;
+}
 .article h2{
 	font-size: 1.3em;
 }
 .wrapper.article h1{
-	margin-top: 20px;
+	margin-top: 10px;
 }
 .article-detail.article{
 	padding: 0;
@@ -117,4 +121,49 @@ nav button{
 	margin:0;
 	border:1px solid #16c2e8;
 	border-radius: 0px 0px 15px 0px;
+}
+.site-form{
+	margin-top: 60px;
+	border: 1px solid #16c2e8;
+	border-radius: 5px 15px 20px 2px;
+	padding: 20px
+}
+.site-form input, .site-form textarea{
+	display: block;
+	margin: 20px 0 0 0;
+	padding: 5px;
+
+}
+.helptext,.site-form ul {
+	margin: 0 auto;
+	color: #bbb;
+	font-size: 0.9em;
+	display: block;
+
+}
+.errorlist li{
+	padding: 10px;
+	list-style-type: none;
+	color:#ff5722;
+}
+.site-buttom, #id_Image{
+	background:#00dba0;
+	border:0;
+	color:#0f121f;
+	font-size: 1.2em;
+	padding: 10px;
+	border-radius: 5px 15px 15px 2px;
+	margin:10px 0;
+	font-weight: bold;
+}
+.site-form textarea{
+	width: 95%;
+	margin: 0 5px;
+}
+.articles-create{
+	color: #aad0e4;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap:30px;
+
 }

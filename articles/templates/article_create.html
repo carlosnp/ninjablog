@@ -4,14 +4,16 @@
 
 {% block content %}
 	<div class="wrapper">
-		<div class="articles">
-			<h2> {{ title }} </h2>
-			<form action="" method="POST" enctype="multipart/form-data">
+		<div class="articles-create">
+		<div>
+		<h1> {{ title }} </h1>
+		<a href="{% url 'articles:list'%}">Regresar a la lista de Artículos</a>
+		</div>
+			<form action="" method="POST" enctype="multipart/form-data" class="site-form">
 				{% csrf_token %}
 				{{ form.as_p }}
-				<button type="submit">Guardar</button>
+				<button class="site-buttom" type="submit">Guardar</button>
 			</form>
 		</div>
-		<a href="{% url 'articles:list'%}">Regresar a la lista de Artículos</a>
 	</div>
 {% endblock content %}
